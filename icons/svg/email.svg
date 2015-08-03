@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="18px" viewBox="0 0 24 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-email</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Iconography" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="ICONOGRAPHY---CONTROLS-(24x24)" sketch:type="MSArtboardGroup" transform="translate(-148.000000, -1396.000000)" fill="#585858">
+            <path d="M171.75,1396 L148.25,1396 C148.112,1396 148,1396.112 148,1396.25 L148,1413.75 C148,1413.888 148.112,1414 148.25,1414 L171.75,1414 C171.888,1414 172,1413.888 172,1413.75 L172,1396.25 C172,1396.112 171.888,1396 171.75,1396 L171.75,1396 Z M155.762,1404.824 L150,1410.586 L150,1400.11 L155.762,1404.824 L155.762,1404.824 Z M150.579,1398 L169.421,1398 L160,1405.708 L150.579,1398 L150.579,1398 Z M157.317,1406.097 L159.842,1408.163 C159.934,1408.238 160.066,1408.238 160.158,1408.163 L162.683,1406.097 L168.586,1412 L151.414,1412 L157.317,1406.097 L157.317,1406.097 Z M164.238,1404.824 L170,1400.11 L170,1410.586 L164.238,1404.824 L164.238,1404.824 Z" id="icon-email" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

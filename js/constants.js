@@ -1,0 +1,20 @@
+var ICONS = [
+	"agent",
+	"ask-agent",
+	"bikescore",
+	"call",
+	"close",
+	"email",
+	"favorite",
+	"filter",
+	"house",
+	"recommended",
+	"saved-search",
+	"search",
+	"settings",
+	"tour",
+	"transitscore",
+	"view-map",
+	"views",
+	"xout"
+]

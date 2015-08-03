@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-close</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Iconography" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="ICONOGRAPHY---CONTROLS-(24x24)" sketch:type="MSArtboardGroup" transform="translate(-150.000000, -1166.000000)" fill="#585858">
+            <path d="M169.016,1168.045 L167.955,1166.984 C167.857,1166.887 167.699,1166.887 167.601,1166.984 L160,1174.586 L152.398,1166.984 C152.301,1166.887 152.143,1166.887 152.045,1166.984 L150.984,1168.045 C150.887,1168.142 150.887,1168.301 150.984,1168.399 L158.586,1176 L150.984,1183.602 C150.887,1183.699 150.887,1183.858 150.984,1183.955 L152.045,1185.016 C152.143,1185.113 152.301,1185.113 152.398,1185.016 L160,1177.414 L167.601,1185.016 C167.699,1185.113 167.857,1185.113 167.955,1185.016 L169.016,1183.955 C169.113,1183.858 169.113,1183.699 169.016,1183.602 L161.414,1176 L169.016,1168.399 C169.113,1168.301 169.113,1168.142 169.016,1168.045" id="icon-close" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-search</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Iconography" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="ICONOGRAPHY---CONTROLS-(24x24)" sketch:type="MSArtboardGroup" transform="translate(-148.000000, -586.000000)" fill="#585858">
+            <path d="M171.884,607.763 L164.33,600.209 C165.665,598.335 166.309,595.936 165.856,593.374 C165.203,589.68 162.204,586.72 158.502,586.122 C152.359,585.129 147.129,590.359 148.122,596.502 C148.72,600.204 151.68,603.203 155.374,603.856 C157.936,604.309 160.335,603.665 162.209,602.33 L169.763,609.884 C169.86,609.981 170.019,609.981 170.116,609.884 L171.884,608.116 C171.981,608.019 171.981,607.86 171.884,607.763 L171.884,607.763 Z M150,595 C150,591.14 153.14,588 157,588 C160.86,588 164,591.14 164,595 C164,598.86 160.86,602 157,602 C153.14,602 150,598.86 150,595 L150,595 Z" id="icon-search" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

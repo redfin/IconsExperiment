@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-xout</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Iconography" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="ICONOGRAPHY---IDENTIFIERS-(24x24)" sketch:type="MSArtboardGroup" transform="translate(-749.000000, -467.000000)" fill="#585858">
+            <path d="M769,485.586 L769,478 L770.75,478 C770.888,478 771,477.888 771,477.75 L771,475.847 C771,475.771 770.965,475.698 770.905,475.651 L760.155,467.123 C760.064,467.051 759.936,467.051 759.845,467.123 L754.654,471.24 L750.884,467.47 C750.786,467.372 750.628,467.372 750.53,467.47 L749.47,468.53 C749.372,468.628 749.372,468.786 749.47,468.884 L770.116,489.53 C770.214,489.628 770.372,489.628 770.47,489.53 L771.53,488.47 C771.628,488.372 771.628,488.214 771.53,488.116 L769,485.586 L769,485.586 Z M760,469.594 L767,475.222 L767,483.586 L756.124,472.71 L760,469.594 Z M753,486 L753,475.222 L753.448,474.862 L751.962,473.376 L749.095,475.651 C749.035,475.698 749,475.771 749,475.847 L749,477.75 C749,477.888 749.112,478 749.25,478 L751,478 L751,487.75 C751,487.888 751.112,488 751.25,488 L766.586,488 L764.586,486 L753,486 Z" id="icon-xout" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

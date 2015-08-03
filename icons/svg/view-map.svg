@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="12px" height="18px" viewBox="0 0 12 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-view-map</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Iconography" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="ICONOGRAPHY---CONTROLS-(18x18)" sketch:type="MSArtboardGroup" transform="translate(-274.000000, -938.000000)" fill="#585858">
+            <path d="M280,939.5 C282.481,939.5 284.5,941.519 284.5,944 C284.5,946.616 281.857,950.89625 280,953.50175 C278.143,950.89625 275.5,946.616 275.5,944 C275.5,941.519 277.519,939.5 280,939.5 M280,938 C276.6865,938 274,940.6865 274,944 C274,948.50375 280,956 280,956 C280,956 286,948.50375 286,944 C286,940.6865 283.3135,938 280,938 Z M280,947 C278.3455,947 277,945.6545 277,944 C277,942.3455 278.3455,941 280,941 C281.6545,941 283,942.3455 283,944 C283,945.6545 281.6545,947 280,947 Z M280,942.5 C279.17275,942.5 278.5,943.1735 278.5,944 C278.5,944.8265 279.17275,945.5 280,945.5 C280.82725,945.5 281.5,944.8265 281.5,944 C281.5,943.1735 280.82725,942.5 280,942.5 Z" id="icon-view-map" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

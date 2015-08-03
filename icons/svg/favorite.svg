@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="22px" height="19px" viewBox="0 0 22 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-favorite</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Iconography" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="ICONOGRAPHY---IDENTIFIERS-(24x24)" sketch:type="MSArtboardGroup" transform="translate(-269.000000, -469.000000)" fill="#585858">
+            <path d="M285.38,471 C286.174,471 286.96,471.237 287.536,471.65 C288.727,472.505 289.49,474.539 288.645,476.773 C287.797,479.016 283.31,483 280.015,485.537 C276.751,483.011 272.286,479.031 271.366,476.736 C270.501,474.578 271.299,472.505 272.489,471.65 C273.065,471.237 273.851,471 274.645,471 C275.624,471 277.082,471.354 278.469,473.037 L280.013,474.911 L281.556,473.037 C282.944,471.353 284.402,471 285.38,471 M285.38,469 C283.628,469 281.669,469.756 280.013,471.766 C278.357,469.756 276.398,469 274.645,469 C273.359,469 272.184,469.407 271.323,470.026 C269.288,471.487 268.338,474.559 269.509,477.48 C271.026,481.263 278.721,487.079 279.869,487.932 C279.958,487.998 280.068,487.998 280.156,487.932 C281.314,487.076 289.105,481.212 290.516,477.48 C291.629,474.537 290.737,471.487 288.703,470.026 C287.841,469.407 286.666,469 285.38,469" id="icon-favorite" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

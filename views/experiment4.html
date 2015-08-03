@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+	</head>
+	<body style="font-family: redfinIcons;">
+		<h1>Experiment 4: Asynchronous SVG store</h1>
+		<p>Generate an svg store, request it asynchronously, and then insert icons afterwards.</p>
+		<div id="icons"></div>
+		<div id="svgContainer" style="height: 0; width: 0; position: absolute; visibility: hidden"></div>
+
+		<script type="text/javascript" src="react/react.js"></script>
+		<script type="text/javascript" src="react/JSXTransformer.js"></script>
+		<script type="text/javascript" src="constants.js"/></script>
+		<script type="text/jsx" src="svg-store.js"/></script>
+		<script>
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "svg.svg",false);
+			xhr.overrideMimeType("image/svg+xml");
+			xhr.send("");
+			document.getElementById("svgContainer")
+			  .appendChild(xhr.responseXML.documentElement);
+		</script>
+	</body>
+</html>

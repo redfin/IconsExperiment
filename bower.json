@@ -1,0 +1,20 @@
+{
+  "name": "icons-experiment",
+  "main": "index.js",
+  "version": "0.0.0",
+  "authors": [
+    "Doug Wade <doug.wade@redfin.com>"
+  ],
+  "description": "An experiment for icon types",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.13.3"
+  }
+}
