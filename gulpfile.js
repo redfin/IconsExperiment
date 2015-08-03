@@ -1,8 +1,10 @@
+var concat = require('gulp-concat');
 var del = require('del');
 var generateComponents = require('./js/generateComponents.js');
 var gulp = require('gulp');
 var iconfont = require('gulp-iconfont');
 var iconfontCss = require('gulp-iconfont-css');
+var imageDataUri = require('gulp-image-data-uri');
 var path = require('path');
 var spritesmith = require('gulp.spritesmith');
 var svgstore = require('gulp-svgstore');
@@ -16,6 +18,18 @@ var paths = {
 	svgs: 'icons/svg/*.svg',
 	build: 'build'
 }
+
+gulp.task('dataUri', function() {
+	return gulp.src(paths.svgs)
+		.pipe(svgmin())
+		.pipe(generateComponents({
+			template: 'templates/css-component.css',
+			extFromTemplate: true,
+			fileNameFromTemplate: false
+		}))
+		.pipe(concat('data-uri.css'))
+		.pipe(gulp.dest(paths.build));
+});
 
 gulp.task('generateSvgComponents', function() {
 	return gulp.src(paths.svgs)
@@ -91,10 +105,15 @@ gulp.task('svgstore', function() {
 		.pipe(gulp.dest(paths.build))
 });
 
+gulp.task('copy-svgs', function() {
+	return gulp.src(paths.svgs)
+		.pipe(gulp.dest(path.join(paths.build, 'svg')))
+});
+
 gulp.task('clean', function() {
 	del([paths.build], function(err, paths) {
 		console.log('Deleted: ' + paths.join(', '));
 	});
 });
 
-gulp.task('default', ['clean', 'generateExperiment4', 'generateSvgComponents', 'iconfont', 'sprite', 'svgstore']);
+gulp.task('default', ['clean', 'copy-svgs', 'dataUri', 'generateExperiment4', 'generateSvgComponents', 'iconfont', 'sprite', 'svgstore']);
