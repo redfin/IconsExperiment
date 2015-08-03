@@ -28,7 +28,7 @@ gulp.task('generateSvgComponents', function() {
 		.pipe(gulp.dest(paths.build));
 });
 
-gulp.task('generateExperiment6', function() {
+gulp.task('generateExperiment4', function() {
 	return gulp.src(paths.svgs)
 		.pipe(svgmin(function(file) {
 			var prefix = path.basename(file.relative, path.extname(file.relative));
@@ -43,7 +43,7 @@ gulp.task('generateExperiment6', function() {
 		}))
 		.pipe(svgstore())
 		.pipe(generateComponents({
-			template: 'templates/experiment6.html',
+			template: 'templates/experiment4.html',
 			extFromTemplate: true,
 			fileNameFromTemplate: true
 		}))
@@ -97,4 +97,4 @@ gulp.task('clean', function() {
 	});
 });
 
-gulp.task('default', ['clean', 'iconfont', 'sprite', 'svgstore']);
+gulp.task('default', ['clean', 'generateExperiment4', 'generateSvgComponents', 'iconfont', 'sprite', 'svgstore']);
