@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+	</head>
+	<body style="font-family: redfinIcons;">
+		<h1>Experiment 4: Synchronous SVG store</h1>
+		<p>Generate an svg store, write it into the dom server-side with lodash templates, then use media queries.</p>
+		<div id="icons"></div>
+		<div id="svgContainer" style="height: 0; width: 0; position: absolute; visibility: hidden"><%= contents %></div>
+
+		<script type="text/javascript" src="react/react.js"></script>
+		<script type="text/javascript" src="react/JSXTransformer.js"></script>
+		<script type="text/javascript" src="constants.js"/></script>
+		<script type="text/jsx" src="svg-store.js"/></script>
+	</body>
+</html>

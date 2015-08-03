@@ -20,7 +20,33 @@ var paths = {
 gulp.task('generateSvgComponents', function() {
 	return gulp.src(paths.svgs)
 		.pipe(svgmin())
-		.pipe(generateComponents())
+		.pipe(generateComponents({
+			template: 'templates/svg-component.js',
+			extFromTemplate: true,
+			fileNameFromTemplate: false
+		}))
+		.pipe(gulp.dest(paths.build));
+});
+
+gulp.task('generateExperiment6', function() {
+	return gulp.src(paths.svgs)
+		.pipe(svgmin(function(file) {
+			var prefix = path.basename(file.relative, path.extname(file.relative));
+			return {
+				plugins: [{
+					cleanupIDs: {
+						prefix: prefix + '-',
+						minify: true
+					}
+				}]
+			}
+		}))
+		.pipe(svgstore())
+		.pipe(generateComponents({
+			template: 'templates/experiment6.html',
+			extFromTemplate: true,
+			fileNameFromTemplate: true
+		}))
 		.pipe(gulp.dest(paths.build));
 });
 
@@ -37,7 +63,7 @@ gulp.task('iconfont', function() {
 	return gulp.src([paths.svgs])
 		.pipe(iconfont({
 			fontName: fontName, // required
-			appendUnicode: true, // recommended option
+			appendUnicode: false, // don't change source filenames
 			formats: ['ttf', 'woff'],
 			timestamp: runTimestamp // recommended to get consistent builds when watching files
 		}))
