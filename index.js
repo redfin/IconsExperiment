@@ -1,9 +1,12 @@
 "use strict";
 
 var koa = require("koa");
-var app = koa();
 var route = require("koa-route");
 var serve = require("koa-static");
+var gzip = require("koa-gzip");
+
+var app = koa();
+app.use(gzip());
 
 app.use(serve("views"));
 app.use(serve("build"));
