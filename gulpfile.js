@@ -80,12 +80,12 @@ gulp.task('iconfont', function() {
 		.pipe(iconfont({
 			fontName: fontName, // required
 			appendUnicode: false, // don't change source filenames
-			formats: ['ttf', 'woff'],
+			formats: ['ttf', 'eot', 'woff', 'svg'],
 			timestamp: runTimestamp // recommended to get consistent builds when watching files
 		}))
 		.on('glyphs', function(codepoints, options) {
 			codepoints.forEach(function(glyph, idx, arr) {
-				arr[idx].codepoint = glyph.unicode[0].codePointAt(0).toString(16);
+				arr[idx].codepoint = glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase();
 			});
 			gulp.src('templates/icon-font.css')
 				.pipe(consolidate('lodash', {
