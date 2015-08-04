@@ -2,12 +2,14 @@
 This repo is an investigation to figure out what the "best" solution is for Redfin to serve its icons.  To see a more formal definition of best, see "What we hoped to achieve".
 
 # Installation
-1. Installed the toolchain -- see step 1 under Method for specific installation instructions.
+1. Install the toolchain -- see step 1 under Method for specific installation instructions.
 
 2. Create a folder for the project, and clone the repo:
 		mkdir ~/code/icons-experiment
 		cd ~/code/icons-experiment
 		git clone https://doug.wade@stash.redfin.com/scm/\~doug.wade/icons-experiment.git
+
+3. Generate the pngs -- see step 6 under Method for instructions
 
 3. Build the assets
 		gulp
