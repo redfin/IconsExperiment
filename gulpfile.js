@@ -1,6 +1,7 @@
 var concat = require('gulp-concat');
 var consolidate = require('gulp-consolidate');
 var del = require('del');
+var fontcustom = require('gulp-fontcustom');
 var generateComponents = require('./js/generateComponents.js');
 var gulp = require('gulp');
 var gutil = require('gulp-util');
@@ -95,6 +96,15 @@ gulp.task('iconfont', function() {
 				}))
 				.pipe(gulp.dest(paths.build));
 		})
+		.pipe(gulp.dest(paths.build));
+});
+
+gulp.task('fontcustom', function() {
+	gulp.src(paths.svgs)
+		.pipe(fontcustom({
+			font_name: fontName + '2',
+			'css-selector': '.icon-{{glyph}}'
+		}))
 		.pipe(gulp.dest(paths.build));
 });
 
