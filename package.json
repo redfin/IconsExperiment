@@ -8,6 +8,7 @@
     "del": "^1.2.0",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
+    "gulp-consolidate": "^0.1.2",
     "gulp-iconfont": "^4.0.0",
     "gulp-iconfont-css": "0.0.9",
     "gulp-image-data-uri": "^1.0.0",

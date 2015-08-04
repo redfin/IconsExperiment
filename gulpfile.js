@@ -1,7 +1,9 @@
 var concat = require('gulp-concat');
+var consolidate = require('gulp-consolidate');
 var del = require('del');
 var generateComponents = require('./js/generateComponents.js');
 var gulp = require('gulp');
+var gutil = require('gulp-util');
 var iconfont = require('gulp-iconfont');
 var iconfontCss = require('gulp-iconfont-css');
 var imageDataUri = require('gulp-image-data-uri');
@@ -81,9 +83,18 @@ gulp.task('iconfont', function() {
 			formats: ['ttf', 'woff'],
 			timestamp: runTimestamp // recommended to get consistent builds when watching files
 		}))
-		.pipe(iconfontCss({
-			fontName: fontName
-		}))
+		.on('glyphs', function(codepoints, options) {
+			codepoints.forEach(function(glyph, idx, arr) {
+				arr[idx].codepoint = glyph.unicode[0].codePointAt(0).toString(16);
+			});
+			gulp.src('templates/icon-font.css')
+				.pipe(consolidate('lodash', {
+					glyphs: codepoints,
+					fontName: options.fontName,
+					fontPath: '/fonts/'
+				}))
+				.pipe(gulp.dest(paths.build));
+		})
 		.pipe(gulp.dest(paths.build));
 });
 
