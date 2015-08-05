@@ -12,8 +12,10 @@ var ICONS = [
 	"saved-search",
 	"search",
 	"settings",
+	"task",
 	"tour",
 	"transitscore",
+	"trulia",
 	"view-map",
 	"views",
 	"xout"

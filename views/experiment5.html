@@ -18,8 +18,7 @@
 			xhr.open("GET", "svg.svg",false);
 			xhr.overrideMimeType("image/svg+xml");
 			xhr.send("");
-			document.getElementById("svgContainer")
-			  .appendChild(xhr.responseXML.documentElement);
+			document.getElementById("svgContainer").innerHTML = xhr.response;
 		</script>
 	</body>
 </html>

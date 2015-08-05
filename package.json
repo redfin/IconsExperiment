@@ -13,6 +13,7 @@
     "gulp-iconfont": "^4.0.0",
     "gulp-iconfont-css": "0.0.9",
     "gulp-image-data-uri": "^1.0.0",
+    "gulp-regex-replace": "^0.2.3",
     "gulp-svgmin": "^1.2.0",
     "gulp-svgstore": "^5.0.3",
     "gulp-util": "^3.0.6",

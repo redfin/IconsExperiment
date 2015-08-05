@@ -4,6 +4,7 @@ var del = require('del');
 var fontcustom = require('gulp-fontcustom');
 var generateComponents = require('./js/generateComponents.js');
 var gulp = require('gulp');
+var replace = require('gulp-regex-replace');
 var gutil = require('gulp-util');
 var iconfont = require('gulp-iconfont');
 var iconfontCss = require('gulp-iconfont-css');
@@ -47,6 +48,7 @@ gulp.task('generateSvgComponents', function() {
 
 gulp.task('generateExperiment4', function() {
 	return gulp.src(paths.svgs)
+		.pipe(replace({ regex: 'fill="[^"]*"', replace: '' }))
 		.pipe(svgmin(function(file) {
 			var prefix = path.basename(file.relative, path.extname(file.relative));
 			return {
@@ -110,6 +112,7 @@ gulp.task('fontcustom', function() {
 
 gulp.task('svgstore', function() {
 	return gulp.src(paths.svgs)
+		.pipe(replace({ regex: 'fill="[^"]*"', replace: '' }))
 		.pipe(svgmin(function(file) {
 			//...?
 			var prefix = path.basename(file.relative, path.extname(file.relative));
@@ -137,4 +140,4 @@ gulp.task('clean', function() {
 	});
 });
 
-gulp.task('default', ['clean', 'copy-svgs', 'dataUri', 'generateExperiment4', 'generateSvgComponents', 'iconfont', 'sprite', 'svgstore']);
+gulp.task('default', ['clean', 'copy-svgs', 'dataUri', 'fontcustom', 'generateExperiment4', 'generateSvgComponents', 'iconfont', 'sprite', 'svgstore']);
