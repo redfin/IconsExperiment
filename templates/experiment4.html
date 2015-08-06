@@ -2,10 +2,17 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
+		<link href="styles.css" rel="stylesheet" />
 	</head>
 	<body style="font-family: redfinIcons;">
 		<h1>Experiment 4: Synchronous SVG store</h1>
 		<p>Generate an svg store, write it into the dom server-side with lodash templates, then use media queries.</p>
+		<ul>
+			<li>Total size: 237 KB</li>
+			<li>Aggregate time: 3.20 s</li>
+			<li>Load time: 173 ms</li>
+			<li>Max JS Heap size: 18,140,872</li>
+		</ul>
 		<div id="icons"></div>
 		<div id="svgContainer" style="height: 0; width: 0; position: absolute; visibility: hidden"><%= contents %></div>
 

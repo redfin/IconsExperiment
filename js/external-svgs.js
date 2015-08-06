@@ -10,10 +10,8 @@ for (var i = 0; i < ICONS.length; i++) {
 				height: SIZES[k].height,
 				width: SIZES[k].width
 			}
-			// var useTag = '<use xlink:href="svg/' + ICONS[i] + '.svg" />'
-			// iconsElems.push(<svg className="icon" style={styles} dangerouslySetInnerHTML={{__html: useTag }} />);
-			// img tags don't support stroke/fill
-			iconsElems.push(<img src={'svg/' + ICONS[i] + '.svg'} style={styles} />);
+			var useTag = '<use style="height: ' + SIZES[k].height + '; width: ' + SIZES[k].width + ';" xlink:href="svg/' + ICONS[i] + '.svg#Iconography" />'
+			iconsElems.push(<svg className="icon" viewBox={"0 0 22 24"} style={styles} dangerouslySetInnerHTML={{__html: useTag }} />);
 		}
 	}
 }

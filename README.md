@@ -30,7 +30,6 @@ This repo is an investigation to figure out what the "best" solution is for Redf
 	- Get scroll test results
 	- Get hard numbers on size
 	- Change cache-control headers
-	- Try moving the icons down 40 px and back up again
 	- Talk to Tony Huang
 	- Try the map page explosion
 

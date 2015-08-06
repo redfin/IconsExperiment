@@ -1,0 +1,15 @@
+.icon {
+  animation-duration: 3s;
+  animation-name: slidedown;
+  position: relative;
+}
+
+@keyframes slidedown {
+  from {
+    top: 40px;
+  }
+
+  to {
+    top: 0;
+  }
+}

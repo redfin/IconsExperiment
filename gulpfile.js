@@ -14,8 +14,8 @@ var spritesmith = require('gulp.spritesmith');
 var svgstore = require('gulp-svgstore');
 var svgmin = require('gulp-svgmin');
 
-var runTimestamp = Math.round(Date.now()/1000);
 var fontName = 'redfinIcons';
+var runTimestamp = Math.round(Date.now()/1000);
 
 var paths = {
 	pngs: 'icons/png/*.png',
@@ -114,7 +114,6 @@ gulp.task('svgstore', function() {
 	return gulp.src(paths.svgs)
 		.pipe(replace({ regex: 'fill="[^"]*"', replace: '' }))
 		.pipe(svgmin(function(file) {
-			//...?
 			var prefix = path.basename(file.relative, path.extname(file.relative));
 			return {
 				plugins: [{
@@ -131,6 +130,20 @@ gulp.task('svgstore', function() {
 
 gulp.task('copy-svgs', function() {
 	return gulp.src(paths.svgs)
+		.pipe(svgmin(function(file) {
+			var prefix = path.basename(file.relative, path.extname(file.relative));
+			return {
+				plugins: [{
+					cleanupIDs: {
+						prefix: prefix + '-',
+						minify: true,
+						remove: false
+					}
+				}]
+			}
+		}))
+		.pipe(replace({ regex: 'fill="[^"]*"', replace: '' }))
+		.pipe(replace({ regex: 'viewBox', replace: 'preserveAspectRatio="xMinYMin meet" viewBox' }))
 		.pipe(gulp.dest(path.join(paths.build, 'svg')))
 });
 
@@ -140,4 +153,4 @@ gulp.task('clean', function() {
 	});
 });
 
-gulp.task('default', ['clean', 'copy-svgs', 'dataUri', 'fontcustom', 'generateExperiment4', 'generateSvgComponents', 'iconfont', 'sprite', 'svgstore']);
+gulp.task('default', ['copy-svgs', 'dataUri', 'fontcustom', 'generateExperiment4', 'generateSvgComponents', 'iconfont', 'sprite', 'svgstore']);
