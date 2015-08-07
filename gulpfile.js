@@ -49,6 +49,7 @@ gulp.task('generateSvgComponents', function() {
 gulp.task('generateExperiment4', function() {
 	return gulp.src(paths.svgs)
 		.pipe(replace({ regex: 'fill="[^"]*"', replace: '' }))
+		.pipe(replace({ regex: 'viewBox="[^"]*"', replace: 'viewBox ="-2 -2 28 28"' }))
 		.pipe(svgmin(function(file) {
 			var prefix = path.basename(file.relative, path.extname(file.relative));
 			return {
@@ -113,6 +114,7 @@ gulp.task('fontcustom', function() {
 gulp.task('svgstore', function() {
 	return gulp.src(paths.svgs)
 		.pipe(replace({ regex: 'fill="[^"]*"', replace: '' }))
+		.pipe(replace({ regex: 'viewBox="[^"]*"', replace: 'viewBox ="-2 -2 28 28"' }))
 		.pipe(svgmin(function(file) {
 			var prefix = path.basename(file.relative, path.extname(file.relative));
 			return {

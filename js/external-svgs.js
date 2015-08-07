@@ -11,7 +11,7 @@ for (var i = 0; i < ICONS.length; i++) {
 				width: SIZES[k].width
 			}
 			var useTag = '<use style="height: ' + SIZES[k].height + '; width: ' + SIZES[k].width + ';" xlink:href="svg/' + ICONS[i] + '.svg#Iconography" />'
-			iconsElems.push(<svg className="icon" viewBox={"0 0 22 24"} style={styles} dangerouslySetInnerHTML={{__html: useTag }} />);
+			iconsElems.push(<svg className="icon" viewBox={"-1 -1 26 26"} style={styles} dangerouslySetInnerHTML={{__html: useTag }} />);
 		}
 	}
 }
