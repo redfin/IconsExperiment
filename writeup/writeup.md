@@ -54,7 +54,7 @@ However unlikely, it is hypothetically possible that png spritesheets are still 
 
 The first hurdle we encountered was how to generate the pngs for the spritesheet, since the experimental dataset is SVGs.  We used [Inkscape](https://inkscape.org/en/) to generate pngs from svgs:
 
-	for file in ~/icons-experiment/icons/svg/\*.svg; do
+	for file in ~/icons-experiment/icons/svg/*.svg; do
 		inkscape -z -e ${file:r:s/svg/png/}24.png -w 22 -h 24 ${file}
 		inkscape -z -e ${file:r:s/svg/png/}36.png -w 22 -h 36 ${file}
 		inkscape -z -e ${file:r:s/svg/png/}48.png -w 22 -h 48 ${file}
@@ -93,7 +93,7 @@ To make sure that our svgs were as small as possible, I piped them first through
 	gulp.task('copy-svgs', function() {
 		return gulp.src(paths.svgs)
 			.pipe(svgmin())
-			.pipe(replace({ regex: 'fill="[^"]\*"', replace: '' }))
+			.pipe(replace({ regex: 'fill="[^"]*"', replace: '' }))
 			.pipe(replace({ regex: 'viewBox', replace: 'preserveAspectRatio="xMinYMin meet" viewBox' }))
 			.pipe(gulp.dest(path.join(paths.build, 'svg')))
 	});
@@ -118,7 +118,7 @@ This does have one significant downside when used in React components.  Since SV
 					width: SIZES[k].width
 				}
 				var useTag = '<use style="height: ' + SIZES[k].height + '; width: ' + SIZES[k].width + ';" xlink:href="svg/' + ICONS[i] + '.svg#Iconography" />'
-				iconsElems.push(<svg className="icon" viewBox={"-1 -1 26 26"} style={styles} dangerouslySetInnerHTML={{\__html: useTag }} />);
+				iconsElems.push(<svg className="icon" viewBox={"-1 -1 26 26"} style={styles} dangerouslySetInnerHTML={{__html: useTag }} />);
 			}
 		}
 	}
@@ -189,14 +189,14 @@ I encountered a couple of "gotchas" while trying to use this gulp plugin.   The 
 		font-style: normal;
 		font-variant: normal;
 		font-weight: normal;
-		/* speak: none; only necessary if not using the private unicode range (firstGlyph option) \*/
+		/* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
 		text-decoration: none;
 		text-transform: none;
 	}
 
-	<% \_.each(glyphs, function(glyph) { %>
+	<% _.each(glyphs, function(glyph) { %>
 	.icon-<%= glyph.name %>:before {
-		content: "\<%= glyph.codepoint %>";
+		content: "<%= glyph.codepoint %>";
 	}
 	<% }); %>
 
@@ -270,7 +270,7 @@ I couldn't find a [gulp](http://gulpjs.com/) plugin that generated this kind of 
 				extName = path.extname(file.path);
 			}
 
-			var component = \_.template(template)({ contents: file.contents, fileName: fileName, filePath: file.path });
+			var component = _.template(template)({ contents: file.contents, fileName: fileName, filePath: file.path });
 			file.path = path.join(path.dirname(file.path), fileName + extName);
 
 			if (file.isBuffer()) {
@@ -361,7 +361,7 @@ At Redfin, we use [webpack](http://webpack.github.io/) to bundle our JavaScript 
 			elem.replace(/height="[^"]*"/, 'height="' + this.props.height + '"');
 
 			return (
-				<div dangerouslySetInnerHTML={{\__html: elem }}></div>
+				<div dangerouslySetInnerHTML={{__html: elem }}></div>
 			);
 		}
 	});
