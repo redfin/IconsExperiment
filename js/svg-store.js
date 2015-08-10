@@ -15,6 +15,8 @@ for (var i = 0; i < ICONS.length; i++) {
 	}
 }
 
+<icon name="agent"></icon>
+
 React.render(
 	<div>{iconsElems}</div>,
 	document.getElementById('icons')

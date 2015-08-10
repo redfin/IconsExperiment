@@ -9,7 +9,7 @@ for (var i = 0; i < ICONS.length; i++) {
 				height: SIZES[k].height,
 				width: SIZES[k].width
 			}
-			iconsElems.push(<div><div className={"icon-" + ICONS[i]}></div></div>);
+			iconsElems.push(<div><div className={"icon-" + ICONS[i] + SIZES[k].width}></div></div>);
 		}
 	}
 }

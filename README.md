@@ -72,7 +72,11 @@ The note for the blog post I hope to turn this in to follow:
 		brew install xquartz
 		brew install inkscape
 		for file in ~/icons-experiment/icons/svg/*.svg; do
-			inkscape -z -e ${file:r:s/svg/png/}.png -w 22 -h 24 ${file}
+			inkscape -z -e ${file:r:s/svg/png/}24px.png -w 20 -h 24 ${file}
+			inkscape -z -e ${file:r:s/svg/png/}36px.png -w 30 -h 36 ${file}
+			inkscape -z -e ${file:r:s/svg/png/}48px.png -w 40 -h 48 ${file}
+			inkscape -z -e ${file:r:s/svg/png/}60px.png -w 50 -h 60 ${file}
+			inkscape -z -e ${file:r:s/svg/png/}72px.png -w 60 -h 72 ${file}
 		done
 
 7. I created a index page to link to the experiment pages at ~/icons-experiment/indx.html for ease of testing
