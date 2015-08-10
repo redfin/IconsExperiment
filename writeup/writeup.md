@@ -368,7 +368,7 @@ At Redfin, we use [webpack](http://webpack.github.io/) to bundle our JavaScript 
 
 ## What did we find?
 
-Fairly early on, I eliminated the PNG spritesheets -- the spritesheets are just enormous compared to the size of the SVGs (139 KB for the PNG spritesheet which doesn't even support multiple colors vs 6.5 KB for all of the SVGs), and don't eliminate the blurriness.  Similarly, I discarded the stylesheet-embedded icons for much the same reason -- since the SVGs are embedded in CSS and displayed as background images, I couldn't find a way to adjust the size and color of the SVGs, which would mean that I would have to generate O((number of icons) x (number of colors) x (number of sizes)) CSS classes, which is simply unmanageable, and not particularly space-efficient.  I also eliminated the plan to generate React components, since their inclusion in page-specific bundles would necessitate re-downloading the same icons for every page, even if they share icons, instead of fetching them from the browser cache.  I considered including all of them in the common bundle, but if that is the case, then there is a lot of overhead (most notably maintenance of the SVG component template and `require` statements in components) for no benefit from Webpack.
+Fairly early on, I eliminated the PNG spritesheets -- the spritesheets are just enormous compared to the size of the SVGs (139 KB for the PNG spritesheet which doesn't even support multiple colors vs 6.5 KB for all of the SVGs), and don't eliminate the blurriness.  Similarly, I discarded the stylesheet-embedded icons for much the same reason -- since the SVGs are embedded in CSS and displayed as background images, I couldn't find a way to adjust the size and color of the SVGs, which would mean that I would have to generate O((number of icons) x (number of colors) x (number of sizes)) CSS classes, which is simply unmanageable, and not particularly space-efficient.  I also eliminated the plan to generate React components, since their inclusion in page-specific bundles would necessitate re-downloading the same icons for every page, even if they share icons, instead of fetching them from the browser cache.  I considered including all of them in the common bundle, but if that is the case, then there is a lot of overhead (most notably maintenance of the SVG component template and `require` statements in components) for no benefit from Webpack.  The `gulp-iconfont` solution is remarkably poorly behaved -- the icons that it drew were significantly smaller than those produced by the other methods, and the font mishandles a number of different icons (most notably making circles and ovals screwy looking), so it was also fairly easy to eliminate.
 
 Therefore, when it came time to measure the performance of the various methods I explored, there were only a couple of real competitors left to test: the two web fonts, the synchronous and asynchronous SVG stores, and serving external SVGs.  I only used Chrome to record the performance of our various methods, since Firefox requires starting and stopping recordings manually for performance measurements, which makes the experiment hard to reproduce (since the results can depend on when you click start/stop recording).  I spent a fair bit of time grokking the [Chrome Timeline](https://developer.chrome.com/devtools/docs/timeline), but here's what I found:
 
@@ -381,15 +381,6 @@ Therefore, when it came time to measure the performance of the various methods I
 		<th>Max JS Heap size (b)</th>
 		<th>Time to first icon paint</th>
 		<th>Total paint time</th>
-	</tr>
-	<tr>
-		<td>gulp-iconfont</td>
-		<td>234</td>
-		<td>3.17</td>
-		<td>176</td>
-		<td>17,941,648</td>
-		<td>591</td>
-		<td>574</td>
 	</tr>
 	<tr>
 		<td>gulp-fontcustom</td>
@@ -429,4 +420,4 @@ Therefore, when it came time to measure the performance of the various methods I
 	</tr>
 </table>
 
-From those results, and based on its ease of use and flexibility and its resistance to malformed SVGs that are produced by our design team, we decided to go with the asynchronous SVG store solution.  For us, the "flicker" time, or the time till the first icon appeared on the page was a very significant part of our decision making process, followed by the total size on the wire.  The `gulp-iconfont` solution looks good from the numbers, but is remarkably poorly behaved -- the icons that it drew were significantly smaller than those produced by the other methods, and the font mishandles a number of different icons (most notably making circles and ovals screwy looking).  The `gulp-fontcustom` solution was surprisingly slow to run the full animation, though spends the smallest amount of its total time in paint, which [adversely affects scrolling](http://www.html5rocks.com/en/tutorials/speed/scrolling/). The external SVG solution took up more space on the wire, which adversely affects our customers on mobile.  The synchronous SVG store doesn't allow us to take advantage of the browser cache, so we decided to go with the asynchronous SVG store.
+From those results, and based on its ease of use and flexibility and its resistance to malformed SVGs that are produced by our design team, we decided to go with the asynchronous SVG store solution.  For us, the "flicker" time, or the time till the first icon appeared on the page was a very significant part of our decision making process, followed by the total size on the wire.  The `gulp-fontcustom` solution was surprisingly slow to run the full animation, though spends the smallest amount of its total time in paint, which [adversely affects scrolling](http://www.html5rocks.com/en/tutorials/speed/scrolling/). The external SVG solution took up more space on the wire, which adversely affects our customers on mobile.  The synchronous SVG store doesn't allow us to take advantage of the browser cache, so we decided to go with the asynchronous SVG store.
