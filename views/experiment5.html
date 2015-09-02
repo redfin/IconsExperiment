@@ -14,18 +14,23 @@
 			<li>Max JS Heap size: 18,079,912</li>
 		</ul>
 		<div id="icons"></div>
-		<div id="svgContainer" style="height: 0; width: 0; position: absolute; visibility: hidden"></div>
 
 		<script type="text/javascript" src="react/react.js"></script>
 		<script type="text/javascript" src="react/JSXTransformer.js"></script>
 		<script type="text/javascript" src="constants.js"/></script>
 		<script type="text/jsx" src="svg-store.js"/></script>
 		<script>
-			var xhr = new XMLHttpRequest();
-			xhr.open("GET", "svg.svg",false);
-			xhr.overrideMimeType("image/svg+xml");
-			xhr.send("");
-			document.getElementById("svgContainer").innerHTML = xhr.response;
+			if (!document.getElementById("svg-store")) {
+				var xhr = new XMLHttpRequest();
+				xhr.open("GET", "svg.svg",false);
+				xhr.overrideMimeType("image/svg+xml");
+				xhr.send("");
+				var svgDiv = document.createElement("div");
+				svgDiv.id = "svg-store";
+				svgDiv.style = { height: 0, width: 0, position: "absolute", visibility: "hidden" };
+				svgDiv.innerHTML = xhr.response;
+				document.body.appendChild(svgDiv);
+			}
 		</script>
 	</body>
 </html>
